@@ -191,7 +191,7 @@ Examples:
      | python Hextech.py -t VICTIM@email.com-s 1234567
      |--------
      | python Hextech.py -g https://www.facebook.com/Victim_Profile
-     |--------
+     |----------『ＨＥＸ✦ＴＥＣＨ』
 """ + wi)
 
 
