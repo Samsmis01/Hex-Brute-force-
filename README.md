@@ -116,8 +116,7 @@ Après avoir personnalisé le script, réexécutez-le :
 ```bash
 python generate_wordlist.py
 ```
-
----
+## python Hextech.py -t vasbosser@gmail.com -w /storage/emulated/0/Download/Worldlist.txt
 
 ## **Exemple de sortie dans Termux**
 
